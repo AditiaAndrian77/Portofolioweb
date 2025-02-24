@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!--=============== REMIXICONS ===============-->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+        />
+
+        <!-- ICON -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        />
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="css/styles.css" />
+
+        <link rel="stylesheet" href="css/mediaquery.css" />
+
+        <link rel="stylesheet" href="css/animasi.css" />
+
+        <!-- AOS -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+        <!-- FavIcon-->
+        <link rel="icon" href="img/favicn.png" />
+
+        <!-- SweetAlert2 CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+        />
+
+        <title>Portofolio</title>
+    </head>
+    <body>
+        <!--================ HEADER ==================-->
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo"
+                    >Aditia Andrian<span class="text-animation">.</span></a
+                >
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#profile" class="nav__link">
+                                <i class="ri-arrow-right-up-line"></i>
+                                <span class="text-nav">Home</span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">
+                                <i class="ri-arrow-right-up-line"></i>
+                                <span class="text-nav">About Us</span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#service" class="nav__link">
+                                <i class="ri-arrow-right-up-line"></i>
+                                <span class="text-nav">Service</span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#project" class="nav__link">
+                                <i class="ri-arrow-right-up-line"></i>
+                                <span class="text-nav">Projects</span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#" class="nav__link">
+                                <i class="ri-arrow-right-up-line"></i>
+                                <span class="text-nav">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Close button -->
+                    <div class="nav__close" id="nav-close">
+                        <i class="ri-close-large-line"></i>
+                    </div>
+                </div>
+
+                <!-- Toggle button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </nav>
+        </header>
+
+        <!--Profile-->
+        <section class="profile" id="profile">
+            <div class="home-text">
+                <div class="animate-text" data-aos="fade-right">
+                    <h2 class="text">
+                        Hello I'm <span class="text-animation">Aditia</span>
+                    </h2>
+
+                    <h3>Front End Developer</h3>
+
+                    <p>
+                        I'm Front End Developer based in Lampung, and i'm very
+                        passionate dedicated to my work
+                    </p>
+                </div>
+
+                <div class="home-btn">
+                    <a href="#contact" class="btn">Contact Info</a>
+                    <a href="#education" class="btn">Education</a>
+                </div>
+
+                <div class="sosial-icon">
+                    <a
+                        href="https://www.instagram.com/adxt174?igsh=dDhrcGx1dnE0OXd0"
+                        target="_blank"
+                        class="nav__social-link"
+                        onclick="showText('instagram-text')"
+                    >
+                        <i class="ri-instagram-line"></i>
+                        <span class="social-text" id="instagram-text"
+                            >Instagram</span
+                        >
+                    </a>
+                    <a
+                        href="https://github.com/AditiaAndrian"
+                        target="_blank"
+                        class="nav__social-link"
+                        onclick="showText('github-text')"
+                    >
+                        <i class="fa-brands fa-github"></i>
+                        <span class="social-text" id="github-text">GitHub</span>
+                    </a>
+                    <a
+                        href="#profile"
+                        target="_blank"
+                        class="nav__social-link"
+                        onclick="showText('linkedin-text')"
+                    >
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <span class="social-text" id="linkedin-text"
+                            >LinkedIn</span
+                        >
+                    </a>
+                </div>
+            </div>
+
+            <div class="home-img" data-aos="fade-up">
+                <img src="img/bro.jpg" alt="profil-pic" />
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="about" id="about">
+            <p class="section__text__p1">Get To Know More</p>
+            <h1 class="title">About <span class="text-animation">Me</span></h1>
+            <div class="section-container">
+                <div class="section__pic-container" data-aos="fade-up">
+                    <img
+                        src="img/about-pic.jpg"
+                        alt="Profile picture"
+                        class="about-pic"
+                    />
+                </div>
+
+                <div class="about-details-container">
+                    <h2 class="text-about" data-aos="fade-up">
+                        Hello I'm
+                        <span class="text-animation">Aditia Andrian</span>
+                    </h2>
+
+                    <h4 class="text-about2" data-aos="fade-up">
+                        Front End Developer
+                    </h4>
+
+                    <div class="text-container-about" data-aos="fade-up">
+                        <p>
+                            Graduate of SMKS Muhammadiyah 1 Metro, majoring in
+                            Computer Network and Telecommunications Engineering,
+                            with 3 months of IT internship experience. Committed
+                            to developing in the IT field and ready to make a
+                            positive contribution in a dynamic work environment.
+                        </p>
+
+                        <p class="about-end">
+                            <span class="about-end2">Email :</span
+                            >adit09ti@gmail.com
+                        </p>
+
+                        <p class="about-end">
+                            <span class="about-end2">Residence :</span>Lampung,
+                            Indonesia
+                        </p>
+                    </div>
+
+                    <div class="about-btn" data-aos="fade-up">
+                        <a
+                            id="btn-animation"
+                            href="https://drive.google.com/uc?export=download&id=1dsWNy5vRI6BRRd_GHic5p41BObzpJQB1"
+                            class="btn"
+                            onclick="showNotification()"
+                            >Download CV <i class="fa-solid fa-download"></i
+                        ></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+
+        <!-- Education Section -->
+        <section id="education">
+            <p class="section__text__p1">Get To Know More</p>
+            <h1 class="title">
+                My <span class="text-animation">Education</span>
+            </h1>
+            <div class="education-about">
+                <div class="education-item">
+                    <h2>Sertifikat Kompetensi</h2>
+                    <p>Tahun: 2024 - 2025</p>
+                    <p>Network Technical</p>
+                    <button onclick="openCertificate('kom1.jpg','kom2.jpg')">
+                        Lihat Sertifikat
+                    </button>
+                </div>
+
+                <div class="education-item">
+                    <h2>PKL di RSU Muhammadiyah Metro</h2>
+                    <p>Tahun: 2023 - 2024</p>
+                    <p>IT Support</p>
+                    <button onclick="openCertificate('pkl1.jpg','pkl2.jpg')">
+                        Lihat Sertifikat
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <div id="certificateModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <img id="certImage1" class="cert-img" />
+                <img id="certImage2" class="cert-img" />
+            </div>
+        </div>
+
+        <!-- Service -->
+
+        <section class="service" id="service">
+            <p class="section__text__p1">Get To Know More</p>
+            <h1 class="title">Serv<span class="text-animation">ice</span></h1>
+
+            <div class="container">
+                <div class="row" data-aos="fade-up">
+                    <div
+                        class="detail-item wow animate__animated animate__fadeInLeft animate__slow"
+                        data-aos="fade-up"
+                    >
+                        <span>
+                            <img src="img/jaringan.png" alt="" />
+                        </span>
+                        <h2>Jaringan</h2>
+                        <div class="line"></div>
+                        <p class="text">
+                            Berpengalaman dalam pemeliharaan jaringan, dan
+                            instalasi jaringan untuk memastikan konektivitas
+                            yang lancar dan andal.
+                        </p>
+                    </div>
+
+                    <div
+                        class="detail-item wow animate__animated animate__fadeInUp animate__s"
+                        data-aos="fade-up"
+                    >
+                        <span>
+                            <img src="img/router.png" alt="" />
+                        </span>
+                        <h2>Router</h2>
+                        <div class="line"></div>
+                        <p class="text">
+                            Ahli dalam konfigurasi router, pengaturan bandwidth,
+                            pengelolaan alamat IP, serta manajemen VLAN dan WLAN
+                            untuk mengoptimalkan kinerja dan keamanan jaringan.
+                        </p>
+                    </div>
+
+                    <div
+                        class="detail-item wow animate__animated animate__fadeInRight animate__slow"
+                        data-aos="fade-up"
+                    >
+                        <span>
+                            <img src="img/komputer.png" alt="" />
+                        </span>
+                        <h2>Komputer</h2>
+                        <div class="line"></div>
+                        <p class="text">
+                            Memiliki keahlian dalam merakit PC, pemeliharaan dan
+                            perbaikan laptop/PC, serta instalasi ulang sistem
+                            operasi untuk memastikan kinerja optimal.
+                        </p>
+                    </div>
+
+                    <div
+                        class="detail-item wow animate__animated animate__fadeInUp animate__s"
+                        data-aos="fade-up"
+                    >
+                        <span>
+                            <img src="img/ui-ux.png" alt="" />
+                        </span>
+                        <h2>UI/UX</h2>
+                        <div class="line"></div>
+                        <p class="text">
+                            Ahli dalam konfigurasi router, pengaturan bandwidth,
+                            pengelolaan alamat IP, serta manajemen VLAN dan WLAN
+                            untuk mengoptimalkan kinerja dan keamanan jaringan.
+                        </p>
+                    </div>
+
+                    <div
+                        class="detail-item wow animate__animated animate__fadeInUp animate__s"
+                        data-aos="fade-up"
+                    >
+                        <span>
+                            <img src="img/frontend.png" alt="" />
+                        </span>
+                        <h2>FrontEnd</h2>
+                        <div class="line"></div>
+                        <p class="text">
+                            Ahli dalam konfigurasi router, pengaturan bandwidth,
+                            pengelolaan alamat IP, serta manajemen VLAN dan WLAN
+                            untuk mengoptimalkan kinerja dan keamanan jaringan.
+                        </p>
+                    </div>
+
+                    <div
+                        class="detail-item wow animate__animated animate__fadeInUp animate__s"
+                        data-aos="fade-up"
+                    >
+                        <span>
+                            <img src="img/editor.png" alt="" />
+                        </span>
+                        <h2>Design Grapic</h2>
+                        <div class="line"></div>
+                        <p class="text">
+                            Ahli dalam konfigurasi router, pengaturan bandwidth,
+                            pengelolaan alamat IP, serta manajemen VLAN dan WLAN
+                            untuk mengoptimalkan kinerja dan keamanan jaringan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Project-->
+        <section id="project">
+            <p class="section__text__p1">Get To Know More</p>
+            <h1 class="title">
+                My <span class="text-animation">Project</span>
+            </h1>
+
+            <div class="project-container">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="img/animasi.jpg" alt="Project 1" />
+                    </div>
+                    <div class="project-info">
+                        <h3>Coming Soon</h3>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reverse">
+                    <div class="project-image">
+                        <img src="img/animasi.jpg" alt="Project 2" />
+                    </div>
+                    <div class="project-info">
+                        <h3>Coming Soon</h3>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="img/animasi.jpg" alt="Project 3" />
+                    </div>
+                    <div class="project-info">
+                        <h3>Coming Soon</h3>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card reverse">
+                    <div class="project-image">
+                        <img src="img/animasi.jpg" alt="Project 4" />
+                    </div>
+                    <div class="project-info">
+                        <h3>Coming Soon</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <p class="section__text__p1">Get To Know More</p>
+            <h1 class="title">
+                Contact <span class="text-animation">Me</span>
+            </h1>
+
+            <form
+                action="https://formsubmit.co/adit09ti@gmail.com"
+                method="POST"
+            >
+                <input type="text" name="name" placeholder="Nama" required />
+                <input type="email" name="email" placeholder="Email" required />
+                <input type="text" name="phone" placeholder="No HP" required />
+                <textarea
+                    name="message"
+                    placeholder="Pesan"
+                    required
+                ></textarea>
+                <button type="submit">Kirim</button>
+            </form>
+        </section>
+
+        <!--==================== MAIN ====================-->
+        <main>
+            <!-- Insert page sections -->
+        </main>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="js/main.js"></script>
+        <script src="js/scrollAnimations.js"></script>
+
+        <!-- AOS -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+
+        <!-- SweetAlert2 JavaScript -->
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </body>
+</html>
