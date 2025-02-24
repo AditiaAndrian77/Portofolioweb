@@ -1,0 +1,445 @@
+/*navbar*/
+/* Media Queries untuk Navbar */
+
+/* Untuk ukuran layar di bawah 1150px (Tablet dan Mobile) */
+@media screen and (max-width: 1150px) {
+    .nav__menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        background-color: var(--white-color);
+        width: 100%;
+        height: 100%;
+        padding: 6rem 3.5rem 4.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: left 0.4s;
+    }
+
+    .nav__item {
+        transform: translateX(-150px);
+        visibility: hidden;
+        transition:
+            transform 0.4s ease-out,
+            visibility 0.4s;
+    }
+
+    .nav__item:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+    .nav__item:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+    .nav__item:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+    .nav__item:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+    .nav__item:nth-child(5) {
+        transition-delay: 0.5s;
+    }
+    .nav__item:nth-child(6) {
+        transition-delay: 0.6s;
+    }
+
+    .nav__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3rem;
+    }
+
+    .nav__link {
+        position: relative;
+        color: var(--white-color);
+        font-size: var(--h1-font-size);
+        font-weight: var(--font-medium);
+        display: inline-flex;
+        align-items: center;
+        transition: opacity 0.4s;
+    }
+
+    .nav__link i {
+        font-size: 2rem;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            opacity 0.4s,
+            visibility 0.4s;
+    }
+
+    .nav__link span {
+        position: relative;
+        transition: margin 0.4s;
+    }
+
+    .nav__link span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 0;
+        height: 2px;
+        background-color: var(--white-color);
+        transition: width 0.4s ease-out;
+    }
+
+    /* Animation link on hover */
+    .nav__link:hover span {
+        margin-left: 2.5rem;
+    }
+
+    .nav__link:hover i {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav__link:hover span::after {
+        width: 100%;
+    }
+
+    /* Sibling fade animation */
+    .nav__list:has(.nav__link:hover) .nav__link:not(:hover) {
+        opacity: 0.4;
+    }
+
+    .nav__close {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        display: block; /* Tampilkan ikon close pada mobile */
+    }
+
+    /* Show menu */
+    .show-menu {
+        left: 0;
+    }
+
+    /* Animation link when displaying menu */
+    .show-menu .nav__item {
+        visibility: visible;
+        transform: translateX(0);
+    }
+
+    /* Hamburger menu for mobile */
+    .nav__toggle {
+        display: block; /* Show hamburger menu on mobile */
+    }
+
+    #service {
+        padding-top: 12rem; /* Tambahkan padding di atas untuk menghindari tumpang tindih dengan navbar */
+        margin-bottom: 30rem;
+    }
+}
+
+/* Media Queries untuk Navbar di Desktop dan ukuran besar */
+@media screen and (min-width: 1150px) {
+    .nav__menu {
+        position: static; /* Atur ke posisi statis pada desktop */
+        width: auto; /* Lebar otomatis pada desktop */
+        height: auto; /* Tinggi otomatis pada desktop */
+        padding: 0; /* Hapus padding pada desktop */
+        display: flex; /* Tampilan fleksibel untuk navbar */
+        flex-direction: row; /* Tata letak horizontal untuk desktop */
+        justify-content: center; /* Atur konten di tengah secara horizontal */
+        background-color: transparent; /* Warna latar belakang transparan untuk desktop */
+    }
+
+    .nav__toggle {
+        display: none; /* Sembunyikan hamburger menu pada desktop */
+    }
+
+    .nav__close {
+        display: none; /* Sembunyikan ikon close pada desktop */
+    }
+
+    .nav__item {
+        transform: translateX(0); /* Nonaktifkan transisi untuk item menu */
+        visibility: visible; /* Pastikan item menu terlihat */
+    }
+
+    .nav__list {
+        display: flex; /* Pastikan daftar menu ditampilkan secara fleksibel */
+        flex-direction: row; /* Tata letak horizontal untuk desktop */
+        column-gap: 3.5rem; /* Jarak antar item menu */
+    }
+
+    .nav__link {
+        font-size: var(
+            --normal-font-size
+        ); /* Ukuran font standar untuk desktop */
+    }
+
+    .nav__link i {
+        font-size: 1.5rem; /* Ukuran ikon standar untuk desktop */
+    }
+}
+
+/*home*/
+/* Media Queries for Home Section */
+@media (max-width: 768px) {
+    .home-text {
+        text-align: center;
+        padding: 0;
+        order: 2; /* Ensure text is below the image */
+    }
+
+    .home-img {
+        text-align: center;
+        order: 1; /* Ensure image is above the text */
+    }
+
+    .home-img img {
+        text-align: center;
+    }
+
+    .home-text h2 {
+        font-size: 2rem;
+    }
+
+    .home-text h3 {
+        padding-left: 0;
+        font-size: 1.5rem;
+    }
+
+    .home-text p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 0.8rem;
+    }
+
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .project-card:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .home-text h3 {
+        font-size: 1.2rem;
+    }
+
+    .home-text p {
+        font-size: 0.8rem;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 0.6rem;
+    }
+}
+
+/*profile*/
+/* Media Queries for Profile Section */
+@media (max-width: 768px) {
+    .profile {
+        grid-template-columns: 1fr;
+        padding: calc(var(--header-height) + 2rem) 2rem 0 2rem;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sosial-icon {
+        position: static;
+        padding: 0;
+        margin-top: 1rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        order: 3; /* Ensure icons are below both image and text */
+    }
+
+    .sosial-icon i {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .sosial-icon {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 6rem;
+    }
+
+    .sosial-icon i {
+        font-size: 1rem;
+    }
+
+    .profile {
+        padding: calc(var(--header-height) + 2rem) 1rem 0 1rem;
+    }
+}
+
+/*about*/
+/* Media Queries for About Section */
+@media (max-width: 1150px) {
+    .about-details-container,
+    .about-pic {
+        max-width: 100%; /* Lebar penuh pada tampilan kecil */
+        flex: none; /* Nonaktifkan flex untuk kontrol lebar penuh */
+    }
+
+    .about-containers {
+        flex-direction: column; /* Letakkan item secara vertikal */
+        gap: 2rem;
+    }
+
+    .text-container {
+        margin-top: 2rem; /* Jarak antara detail dan text kontainer */
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1150px) {
+    .about-containers {
+        display: flex; /* Pastikan flexbox diaktifkan */
+        flex-direction: row; /* Letakkan item secara horizontal */
+        align-items: stretch; /* Pastikan item mengisi tinggi kontainer */
+        gap: 2rem; /* Jarak antara gambar dan teks */
+    }
+
+    .about-details-container {
+        flex: 1; /* Pastikan detail mengambil ruang yang tersedia */
+        max-width: 50%; /* Batas lebar maksimum untuk konten detail */
+    }
+
+    .about-pic {
+        flex: 1; /* Pastikan gambar mengambil ruang yang tersedia */
+        max-width: 100%; /* Atur agar gambar tidak melebihi lebar kontainer */
+        height: auto; /* Jaga agar gambar tidak terdistorsi */
+    }
+
+    .text-container {
+        margin-top: 2rem; /* Jarak antara detail dan text kontainer */
+        max-width: 100%;
+        text-align: left; /* Ubah teks menjadi rata kiri pada desktop */
+    }
+
+    /* Pastikan elemen teks berada dalam kolom vertikal */
+}
+
+/*experience*/
+/* Tablet and Larger View */
+@media (min-width: 768px) {
+    .education-about {
+        flex-direction: row; /* Membuat elemen dalam education-about tampil secara horizontal */
+        justify-content: center; /* Pusatkan konten */
+        gap: 2rem; /* Tambahkan jarak antar elemen */
+    }
+
+    .education-item {
+        flex: 1; /* Setel ukuran fleksibel untuk item agar sesuai secara horizontal */
+        max-width: 45%; /* Setel lebar maksimum agar dua item muat dalam satu baris */
+    }
+}
+
+/* Mobile View */
+@media (max-width: 767px) {
+    #about {
+        margin-bottom: 15rem;
+    }
+    #education {
+        min-height: 100vh;
+        margin-bottom: 15rem;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .education-about {
+        flex-direction: column; /* Kembali ke tata letak vertikal untuk mobile */
+    }
+
+    .education-item {
+        padding: 0.5rem;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    .education-item button {
+        width: 100%;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+}
+/*Service*/
+@media (max-width: 767px) {
+    #service {
+        height: 120vh;
+    }
+    .row {
+        flex-direction: column;
+    }
+
+    .detail-item {
+        width: 100%;
+        margin-top: 1rem;
+        z-index: 1;
+    }
+}
+
+/*Project*/
+@media (min-width: 768px) {
+    .detail-item {
+        flex: 1 1 30%; /* Atur flex basis agar 3 item dalam satu baris */
+    }
+}
+
+@media (min-width: 768px) {
+    .project-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-card {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-direction: row; /* Selalu gambar kiri, teks kanan */
+    }
+}
+
+@media (max-width: 767px) {
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .project-card:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+}

@@ -1,0 +1,715 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3.5rem;
+
+    /*========== Colors ==========*/
+    /*Color mode HSL(hue, saturation, lightness)*/
+    --white-color: hsl(0, 0%, 100%);
+    --white-smoke: #f0f0f0;
+    --black-color: #0b0b45;
+    --instagram-color: #e1306c;
+    --github-color: #333;
+    --linkedin-color: #0077b5;
+
+    /*========== Font and typography ==========*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --body-font: "Montserrat Alternates", sans-serif;
+    --h1-font-size: 1.5rem;
+    --normal-font-size: 0.938rem;
+
+    /*========== Font weight ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+    :root {
+        --normal-font-size: 1rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--white-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title {
+    color: var(--black-color);
+}
+
+.title2 {
+    color: var(--instagram-color);
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--white-color);
+    z-index: var(--z-fixed);
+}
+
+.nav {
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo {
+    color: var(--black-color);
+    font-weight: var(--font-medium);
+    font-size: 1.5rem;
+}
+
+.nav__logo span {
+    color:;
+}
+
+.text-nav {
+    color: var(--black-color);
+}
+
+.ri-arrow-right-up-line {
+    color: var(--black-color);
+}
+
+.nav__close,
+.nav__toggle {
+    display: flex;
+    color: var(--black-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/*=================PROFILE=====================*/
+.profile {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: calc(var(--header-height) + 2rem) 5rem 0 18rem; /* Tambahkan padding-top */
+    gap: 1rem;
+}
+
+.home-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 19rem; /* Menjaga elemen berada di tengah vertikal */
+    position: relative;
+}
+
+.home-img img {
+    width: 300px; /* Ukuran gambar tetap */
+    height: 300px;
+    background-color: var(--black-color); /* Warna gelembung */
+    border-radius: 50%; /* Bentuk bulat */
+    animation:
+        elasticBubble 8s ease-in-out infinite,
+        shadowPulse 4s ease-in-out infinite; /* Menambahkan animasi shadowPulse */
+    object-fit: cover; /* Menjaga konten gambar tetap sesuai */
+}
+
+@keyframes elasticBubble {
+    0% {
+        border-radius: 40% 65% 60% 65% / 65% 60% 65% 40%;
+    }
+    25% {
+        border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%;
+    }
+    50% {
+        border-radius: 40% 60% 60% 40% / 60% 40% 40% 60%;
+    }
+    75% {
+        border-radius: 55% 65% 45% 70% / 70% 45% 65% 55%;
+    }
+    100% {
+        border-radius: 40% 65% 60% 65% / 65% 60% 65% 40%;
+    }
+}
+
+.home-text h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.text-animation {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #0b0b45, #23d5ab);
+    color: transparent;
+    background-size: 400%, 400%;
+    background-clip: text;
+    animation: gradient 5s ease infinite;
+    -ms-text-overflow: clip;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.home-text h3 {
+    position: relative;
+    padding-left: 6rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.home-text h3::before {
+    content: "";
+    position: relative;
+    width: 80px;
+    height: 2px;
+    left: 0;
+    top: 1rem;
+}
+
+.home-text p {
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-flex;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: var(--white-color);
+    border: 1px solid var(--black-color);
+    font-weight: 500;
+    font-size: 12px;
+    text-align-last: center;
+    background: var(--black-color);
+    transition: all 0.5s;
+}
+
+.btn:hover {
+    background: var(--white-color);
+    color: var(--black-color);
+    transform: translateY(5px);
+}
+
+.sosial-icon {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    padding: 1rem 0;
+}
+
+.sosial-icon a {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+    text-align: center;
+    transition: all 0.3s;
+    position: relative;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.sosial-icon a:hover:nth-child(1),
+.sosial-icon a.show-text:nth-child(1) {
+    background-color: var(--black-color);
+}
+
+.sosial-icon a:hover:nth-child(2),
+.sosial-icon a.show-text:nth-child(2) {
+    background-color: var(--black-color);
+}
+
+.sosial-icon a:hover:nth-child(3),
+.sosial-icon a.show-text:nth-child(3) {
+    background-color: var(--black-color);
+}
+
+.sosial-icon i {
+    font-size: 3rem;
+    transition: all 0.3s;
+}
+
+.sosial-icon .ri-instagram-line {
+    color: var(--black-color);
+}
+
+.sosial-icon .ri-instagram-line:hover {
+    color: var(--white-color);
+}
+
+.sosial-icon .fa-github {
+    color: var(--black-color);
+}
+
+.sosial-icon .fa-github:hover {
+    color: var(--white-color);
+}
+
+.sosial-icon .fa-linkedin-in {
+    color: var(--black-color);
+}
+
+.sosial-icon .fa-linkedin-in:hover {
+    color: var(--white-color);
+}
+
+.social-text {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 1rem;
+    color: var(--white-color);
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    transition:
+        opacity 0.3s ease,
+        max-width 0.3s ease;
+}
+
+.sosial-icon a.show-text .social-text {
+    opacity: 1;
+    max-width: 200px;
+}
+
+.sosial-icon a.show-text {
+    background-color: white;
+    transition:
+        background-color 0.3s,
+        color 0.3s;
+}
+
+/*================= About ===================*/
+#about {
+    position: relative;
+    padding: 2rem;
+    text-align: center;
+    padding-top: 7rem; /* Tambahkan padding di atas untuk menghindari tumpang tindih dengan navbar */
+
+    z-index: 1; /* Pastikan elemen ini berada di atas layer */
+
+    height: 100vh; /* Mengatur tinggi untuk mengisi satu layar penuh */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Pusatkan konten secara vertikal */
+}
+
+.section-container {
+    padding-top: 3rem;
+}
+
+.about-details-container {
+    flex: 1;
+    max-width: 50%; /* Setengah dari lebar kontainer */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Pusatkan konten secara vertikal */
+}
+.about-pic {
+    flex: 1;
+    width: 100%; /* Pastikan gambar menggunakan seluruh lebar kontainer yang diberikan */
+    max-width: 50%; /* Batas maksimalnya adalah setengah kontainer pada tampilan besar */
+    border-radius: 2rem;
+    height: auto; /* Memastikan proporsi gambar tetap */
+}
+
+/* CSS umum untuk elemen teks */
+.text-about,
+.text-about2 {
+    text-align: justify; /* Rata kiri dan kanan */
+    margin: 0; /* Hapus margin default */
+    padding: 0; /* Hapus padding default */
+}
+
+.text-about2 {
+    display: flex;
+    font-weight: 500; /* Mengatur ketebalan font */
+    padding-bottom: 3rem; /* Jarak bawah */
+    padding-top: 8px; /* Jarak atas */
+}
+
+.text-container-about p {
+    text-align: justify;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    margin: 0;
+    /* Hilangkan margin untuk memastikan keselarasan */
+}
+
+/* Paragraf pertama saja yang memiliki indentasi */
+.text-container-about p:first-child {
+    text-indent: 20px;
+    padding-bottom: 1rem;
+}
+
+.about-end {
+    padding-top: 8px;
+    text-align: justify;
+    margin: 0;
+}
+
+.about-end2 {
+    color: blue;
+}
+
+.about-btn {
+    display: flex;
+    align-items: center;
+    padding-top: 1.2rem;
+}
+
+.section-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.section__pic-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.pic-pic {
+    width: 25px;
+    height: 25px;
+}
+
+/* EDUCATION SECTION */
+
+#education {
+    position: relative;
+    padding: 2rem;
+
+    text-align: center;
+    /* Tambahkan padding di atas untuk menghindari tumpang tindih dengan navbar */
+
+    z-index: 1; /* Pastikan elemen ini berada di atas layer */
+
+    height: 20vh; /* Mengatur tinggi untuk mengisi satu layar penuh */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Pusatkan konten secara vertikal */
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.education-about {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Education Item */
+.education-item {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(11, 11, 69, 0.5);
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.education-item:hover {
+    transform: scale(1.05);
+}
+
+.education-item button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: var(--black-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.education-item button:hover {
+    background-color: #0056b3;
+}
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with opacity */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's on top */
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cert-img {
+    width: 100%; /* Lebar penuh supaya lebih jelas */
+    display: block;
+    margin-bottom: 10px; /* Jarak antara gambar */
+}
+
+/*-------SERVICE SECTION--------*/
+#service {
+    position: relative;
+    padding: 2rem;
+    text-align: center;
+  
+    padding-top: 6rem; /* Tambahkan padding di atas untuk menghindari tumpang tindih dengan navbar */
+
+    z-index: 1; /* Pastikan elemen ini berada di atas layer */
+
+    height: 100vh; /* Mengatur tinggi untuk mengisi satu layar penuh */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Pusatkan konten secara vertikal */
+
+    .section__text__p1 {
+        text-align: center;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1200px; /* Atur max-width untuk menjaga agar konten tidak terlalu melebar */
+        margin: 0 auto; /* Center container */
+        padding: 0 1rem; /* Padding horizontal untuk menyesuaikan dengan layar kecil */
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .detail-item {
+        background-color: rgba(255, 255, 255, 0.6);
+        transition: box-shadow 0.3s ease;
+        padding: 1rem;
+        border-radius: 10px;
+        box-sizing: border-box;
+        flex: 1 1 30%; /* Sesuaikan jika perlu */
+        margin-top: 1rem;
+    }
+
+    .detail-item:hover {
+        box-shadow: 0px 4px 8px rgba(11, 11, 69, 0.5);
+    }
+
+    .detail-item img {
+        height: 25px;
+        width: 25px;
+    }
+
+    .line {
+        margin: 1rem 0;
+        height: 1px;
+        background-color: var(--black-color); /* Sesuaikan dengan warna garis */
+    }
+
+    .text {
+        font-size: 0.9rem;
+    }
+}
+
+/*--------PROJECT SECTION--------*/
+#project {
+    position: relative;
+    padding: 2rem;
+    text-align: center;
+
+    padding-top: 8rem; /* Tambahkan padding di atas untuk menghindari tumpang tindih dengan navbar */
+    margin-bottom: 15rem;
+
+    z-index: 1; /* Pastikan elemen ini berada di atas layer */
+
+    height: 100vh; /* Mengatur tinggi untuk mengisi satu layar penuh */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Pusatkan konten secara vertikal */
+
+    .project-container {
+        display: grid;
+        width: 100%;
+        max-width: 900px;
+        margin: auto;
+        padding: 0 15px;
+        gap: 20px;
+    }
+
+    .project-card {
+        background: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-image img {
+        width: 100px; /* Atur ukuran gambar */
+        height: 100px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .project-info {
+        flex: 1;
+    }
+}
+
+/*----------CONTACT SECTION------------*/
+#contact {
+    position: relative;
+    padding: 2rem;
+    text-align: center;
+    padding-top: 7rem; /* Tambahkan padding di atas untuk menghindari tumpang tindih dengan navbar */
+
+    z-index: 1; /* Pastikan elemen ini berada di atas layer */
+
+    height: 100vh; /* Mengatur tinggi untuk mengisi satu layar penuh */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Pusatkan konten secara vertikal */
+
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+        transition: all 0.3s ease-in-out;
+    }
+
+    input:focus,
+    textarea:focus {
+        border-color: #0b0b45;
+        box-shadow: 0 0 5px rgba(11, 11, 69, 0.5);
+    }
+
+    button {
+        padding: 12px;
+        font-size: 1rem;
+        color: #fff;
+        background: #0b0b45;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out;
+    }
+
+    button:hover {
+        background: #080836;
+    }
+}
+
+/* Notifikasi Sukses */
+.success-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    background-color: #0b0b45;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition:
+        opacity 0.5s ease-out,
+        transform 0.5s ease-out;
+    z-index: 1000;
+}
+
+/* Animasi Muncul */
+.success-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
