@@ -1,0 +1,23 @@
+:root {
+  --header-height: 3.5rem;
+
+  /* Colors */
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: #0B0B45;
+  --instagram-color: #E1306C;
+  --github-color: #333;
+  --linkedin-color: #0077B5;
+
+  /* Font and typography */
+  --body-font: "Montserrat Alternates", sans-serif;
+  --h1-font-size: 1.5rem;
+  --normal-font-size: .938rem;
+
+  /* Font weight */
+  --font-regular: 400;
+  --font-medium: 500;
+
+  /* z-index */
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
